@@ -1,0 +1,33 @@
+.root {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgstack {
+  width: 35px;
+  height: 35px;
+}
+.iconContainer {
+  text-align: center;
+}
+.imgIcon {
+  width: 25px;
+  height: 25px;
+}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.h1 {
+  text-align: center;
+}
