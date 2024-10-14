@@ -23,15 +23,23 @@ const Contact = () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
     form.addEventListener("submit", function (event: Event) {
       event.preventDefault();
-      if (
-        form.getAttribute("email") === "" ||
-        form.getAttribute("fname") === "" ||
-        form.getAttribute("lname") === "" ||
-        form.getAttribute("message") === ""
-      ) {
+      const email = form.querySelector<HTMLInputElement>(
+        "input[name='email']"
+      )?.value;
+      const fname = form.querySelector<HTMLInputElement>(
+        "input[name='fname']"
+      )?.value;
+      const lname = form.querySelector<HTMLInputElement>(
+        "input[name='lname']"
+      )?.value;
+      const message = form.querySelector<HTMLTextAreaElement>(
+        "textarea[name='message']"
+      )?.value;
+
+      if (!email || !fname || !lname || !message) {
         setalert(true);
       } else {
-        console.log(form.getAttribute("email"));
+        console.log(email);
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form).then(
           () => {
             console.log("Mail send!");
