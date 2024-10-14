@@ -7,22 +7,22 @@ const Footer = (props: Props) => {
   return (
     <div className={app.iconContainer}>
       <div>
-        <a>
+        <a href="https://www.linkedin.com/in/fedegrana/">
           <img
             className={app.imgIcon}
             src="src/assets/icons8-linkedin-50.png"
           ></img>
         </a>
-        <a>
+        <a href="mailto:federicorgrana@gmail.com">
           <img
             className={app.imgIcon}
             src="src/assets/icons8-mail-50.png"
           ></img>
         </a>
-        <a>
+        <a href="https://wa.me/59892680552">
           <img className={app.imgIcon} src="src/assets/icons8-tel-58.png"></img>
         </a>
-        <a>
+        <a href="https://github.com/fgrana">
           <img
             className={app.imgIcon}
             src="src/assets/icons8-github-50.png"

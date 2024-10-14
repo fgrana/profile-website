@@ -1,6 +1,5 @@
-import React, { FC, FormEvent, useRef } from "react";
+import { useState } from "react";
 import contact from "./Contact.module.css";
-import { Button } from "react-bootstrap";
 import emailjs, { send } from "@emailjs/browser";
 import Footer from "../containers/Footer";
 
@@ -13,23 +12,36 @@ const TEMPLATE_ID = "template_8ht62df";
 // npm i @emailjs/browser
 
 const Contact = () => {
+  const [alert, setalert] = useState(false);
+  const [send, setSend] = useState(false);
+
   emailjs.init({
     publicKey: PUBLIC_KEY,
   });
 
   window.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
-
-    form?.addEventListener("submit", function (event: Event) {
+    form.addEventListener("submit", function (event: Event) {
       event.preventDefault();
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form).then(
-        () => {
-          console.log("Mail send!");
-        },
-        (error) => {
-          console.log("mail failed!", error);
-        }
-      );
+      if (
+        form.getAttribute("email") === "" ||
+        form.getAttribute("fname") === "" ||
+        form.getAttribute("lname") === "" ||
+        form.getAttribute("message") === ""
+      ) {
+        setalert(true);
+      } else {
+        console.log(form.getAttribute("email"));
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form).then(
+          () => {
+            console.log("Mail send!");
+            setSend(true);
+          },
+          (error) => {
+            console.log("mail failed!", error);
+          }
+        );
+      }
     });
   });
 
@@ -38,6 +50,22 @@ const Contact = () => {
       <div className={contact.body}>
         <div className={contact.wrapper}>
           <h1>Contact</h1>
+          {alert ? (
+            <div className="alert alert-warning" role="alert">
+              All fields must be filled!
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {send ? (
+            <div className="alert alert-success" role="alert">
+              Email send!
+            </div>
+          ) : (
+            <></>
+          )}
+
           <form id="contact-form">
             <div className="mb-3">
               <label className="form-label" htmlFor="from_name">
@@ -68,7 +96,7 @@ const Contact = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label" htmlFor="emial">
+              <label className="form-label" htmlFor="email">
                 Email:
               </label>
               <br></br>
