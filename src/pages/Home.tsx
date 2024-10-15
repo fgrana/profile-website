@@ -1,10 +1,7 @@
 import Footer from "../containers/Footer";
-import { Transition } from "react-transition-group";
 import app from "../app.module.css";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <div className={app.root}>
       <h1 className={app.h1}>Fede Graña</h1>

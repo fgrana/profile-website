@@ -1,10 +1,8 @@
 import { useState } from "react";
 import contact from "./Contact.module.css";
-import emailjs, { send } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Footer from "../containers/Footer";
 import process from "process";
-
-type Props = {};
 
 const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const SERVICE_ID = process.env.SERVICE_ID;
@@ -13,6 +11,10 @@ const TEMPLATE_ID = process.env.TEMPLATE_ID;
 // npm i @emailjs/browser
 
 const Contact = () => {
+  if (!PUBLIC_KEY || !SERVICE_ID || !TEMPLATE_ID) {
+    console.log("keys not found");
+    console.log("publickey" + PUBLIC_KEY);
+  }
   const [alert, setalert] = useState(false);
   const [send, setSend] = useState(false);
 

@@ -1,9 +1,6 @@
-import React from "react";
 import Footer from "../containers/Footer";
 
-type Props = {};
-
-const Aboutme = (props: Props) => {
+const Aboutme = () => {
   return (
     <div>
       <h1>About me</h1>

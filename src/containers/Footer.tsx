@@ -1,9 +1,6 @@
-import React from "react";
 import app from "../app.module.css";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <div className={app.iconContainer}>
       <div>

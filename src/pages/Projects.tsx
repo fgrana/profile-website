@@ -1,12 +1,9 @@
-import React from "react";
 import Card from "./../containers/Card";
 import Footer from "../containers/Footer";
 
-type Props = {};
-
 const projects = ["pokemon"];
 
-const Projects = (props: Props) => {
+const Projects = () => {
   return (
     <div>
       <h1>Projects</h1>
