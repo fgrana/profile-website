@@ -2,12 +2,13 @@ import { useState } from "react";
 import contact from "./Contact.module.css";
 import emailjs, { send } from "@emailjs/browser";
 import Footer from "../containers/Footer";
+import process from "process";
 
 type Props = {};
 
-const PUBLIC_KEY = "wG-0wRe_xTDPB1gB9";
-const SERVICE_ID = "service_a5rd5l8";
-const TEMPLATE_ID = "template_8ht62df";
+const PUBLIC_KEY = process.env.PUBLIC_KEY;
+const SERVICE_ID = process.env.SERVICE_ID;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
 
 // npm i @emailjs/browser
 
