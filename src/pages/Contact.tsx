@@ -1,24 +1,19 @@
 import { useState } from "react";
 import contact from "./Contact.module.css";
-import emailjs, { send } from "@emailjs/browser";
 import Footer from "../containers/Footer";
-import process from "process";
 
-type Props = {};
-
-const PUBLIC_KEY = process.env.PUBLIC_KEY;
-const SERVICE_ID = process.env.SERVICE_ID;
-const TEMPLATE_ID = process.env.TEMPLATE_ID;
-
-// npm i @emailjs/browser
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const Contact = () => {
+
+  console.log(PUBLIC_KEY)
+
   const [alert, setalert] = useState(false);
   const [send, setSend] = useState(false);
+  const [emailjsResponse, setEmailjsResponse] = useState();
 
-  emailjs.init({
-    publicKey: PUBLIC_KEY,
-  });
 
   window.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
@@ -40,18 +35,41 @@ const Contact = () => {
       if (!email || !fname || !lname || !message) {
         setalert(true);
       } else {
-        console.log(email);
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form).then(
-          () => {
+            const fetchEmailjs = async () => {
+              const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                  method: 'POST',
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                      "Content-type": "application/json; charset=UTF-8",
+                      mode: 'cors'
+                  },
+                  body: JSON.stringify({
+                      user_id: PUBLIC_KEY,
+                      service_id: SERVICE_ID,
+                      template_id: TEMPLATE_ID,
+                      template_params: {
+                          'fname': fname,
+                          'lname': lname,
+                          'email': email,
+                          'message': message,
+                          // Add more parameters as needed
+                      }
+                  })
+              });
+              
+              const emailjsResponse = await response.json();
+              
+              setEmailjsResponse(emailjsResponse);
+              
+          };
+          fetchEmailjs()
+          
+
             console.log("Mail send!");
+            console.log(emailjsResponse)
             setSend(true);
-          },
-          (error) => {
-            console.log("mail failed!", error);
-          }
-        );
-      }
-    });
+        
+      }});
   });
 
   return (

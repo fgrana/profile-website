@@ -1,8 +1,6 @@
 import { createRef, FC } from "react";
-import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
-  RouterProvider,
   NavLink,
   useLocation,
   useOutlet,
@@ -64,7 +62,6 @@ const App: FC = () => {
               key={route.path}
               as={NavLink}
               to={route.path}
-              className={({ isActive }) => (isActive ? "active" : undefined)}
               end
             >
               {route.name}
@@ -81,7 +78,7 @@ const App: FC = () => {
             classNames="page"
             unmountOnExit
           >
-            {(state) => (
+            {() => (
               <div ref={nodeRef} className="page">
                 {currentOutlet}
               </div>
