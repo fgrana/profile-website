@@ -6,13 +6,13 @@ const Home = () => {
     <div className={app.root}>
       <h1 className={app.h1}>Fede Graña</h1>
       <div className={app.title}>
-        <img className={app.img} src="src/assets/foto-perfil.png"></img>
+        <img className={app.img} src="public/foto-perfil.png"></img>
       </div>
       <div className={app.iconContainer}>
-        <img className={app.imgstack} src="src/assets/go.png"></img>
-        <img className={app.imgstack} src="src/assets/python.png"></img>
-        <img className={app.imgstack} src="src/assets/aws.png"></img>
-        <img className={app.imgstack} src="src/assets/react.png"></img>
+        <img className={app.imgstack} src="public/go.png"></img>
+        <img className={app.imgstack} src="public/python.png"></img>
+        <img className={app.imgstack} src="public/aws.png"></img>
+        <img className={app.imgstack} src="public/react.png"></img>
       </div>
       <div>
         <p>

@@ -7,7 +7,7 @@ type project = {
 };
 
 function Card(props: project) {
-  const cardimg = "src/assets/" + props.name + ".png";
+  const cardimg = "public/" + props.name + ".png";
   return (
     <div className="card">
       <div className="card-body">
