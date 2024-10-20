@@ -2,7 +2,15 @@
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  
 }
+
+.semiRoot{
+  border-color: rgb(98, 98, 206);
+  border-radius: 25px;
+  border: 10px;
+}
+
 .img {
   width: 150px;
   height: 150px;
@@ -13,10 +21,14 @@
 .imgstack {
   width: 35px;
   height: 35px;
+  flex: 1 1 1 1 200px
 }
 .iconContainer {
-  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around; 
 }
+
 .imgIcon {
   width: 25px;
   height: 25px;

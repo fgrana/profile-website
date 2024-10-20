@@ -14,7 +14,7 @@ const Contact = () => {
   const [send, setSend] = useState(false);
   const [emailjsResponse, setEmailjsResponse] = useState();
 
-
+  
   window.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form") as HTMLFormElement;
     form.addEventListener("submit", function (event: Event) {
@@ -58,16 +58,16 @@ const Contact = () => {
               });
               
               const emailjsResponse = await response.json();
-              
+              if(response.ok){
+                console.log("Mail send!");
+              }
               setEmailjsResponse(emailjsResponse);
               
           };
           fetchEmailjs()
-          
-
-            console.log("Mail send!");
-            console.log(emailjsResponse)
-            setSend(true);
+      
+          console.log(emailjsResponse)
+          setSend(true);
         
       }});
   });

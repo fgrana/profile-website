@@ -40,12 +40,6 @@ const routes: Route[] = [
     element: <About />,
     nodeRef: createRef<HTMLDivElement>(),
   },
-  {
-    path: "/contact",
-    name: "Contact",
-    element: <Contact />,
-    nodeRef: createRef<HTMLDivElement>(),
-  },
 ];
 
 const App: FC = () => {
