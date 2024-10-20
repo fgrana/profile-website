@@ -4,9 +4,6 @@ import app from "../app.module.css";
 const Home = () => {
   return (
     <div className={app.root}>
-      <div className={app.semiRoot}>
-
-    
       <h1 className={app.h1}>Fede Graña</h1>
       <div className={app.title}>
         <img className={app.img} src="public/foto-perfil.png"></img>
@@ -29,7 +26,6 @@ const Home = () => {
           ensuring efficiency and collaboration.
         </p>
       </div>
-</div>
       <Footer />
     </div>
   );
