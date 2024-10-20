@@ -9,7 +9,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import Home from "./pages/Home";
 import About from "./pages/Aboutme";
-import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import Projects from "./pages/Projects";
@@ -32,6 +32,12 @@ const routes: Route[] = [
     path: "/projects",
     name: "Projects",
     element: <Projects />,
+    nodeRef: createRef<HTMLDivElement>(),
+  },
+  {
+    path: "/experience",
+    name: "Experience",
+    element: <Experience />,
     nodeRef: createRef<HTMLDivElement>(),
   },
   {
