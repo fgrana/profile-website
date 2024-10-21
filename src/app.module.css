@@ -3,6 +3,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .img {
   width: 150px;
   height: 150px;
@@ -10,13 +11,22 @@
   margin-right: auto;
 }
 
+.imgText {
+  width: 25px;
+  height: 25px;
+}
+
 .imgstack {
   width: 35px;
   height: 35px;
+  flex: 1 1 1 1 200px;
 }
 .iconContainer {
-  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
+
 .imgIcon {
   width: 25px;
   height: 25px;

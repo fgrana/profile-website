@@ -1,8 +1,6 @@
 import { createRef, FC } from "react";
-import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
-  RouterProvider,
   NavLink,
   useLocation,
   useOutlet,
@@ -11,7 +9,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import Home from "./pages/Home";
 import About from "./pages/Aboutme";
-import Contact from "./pages/Contact";
+import Experience from "./pages/Experience";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import Projects from "./pages/Projects";
@@ -37,15 +35,15 @@ const routes: Route[] = [
     nodeRef: createRef<HTMLDivElement>(),
   },
   {
-    path: "/aboutme",
-    name: "About me",
-    element: <About />,
+    path: "/experience",
+    name: "Experience",
+    element: <Experience />,
     nodeRef: createRef<HTMLDivElement>(),
   },
   {
-    path: "/contact",
-    name: "Contact",
-    element: <Contact />,
+    path: "/aboutme",
+    name: "About me",
+    element: <About />,
     nodeRef: createRef<HTMLDivElement>(),
   },
 ];
@@ -64,7 +62,6 @@ const App: FC = () => {
               key={route.path}
               as={NavLink}
               to={route.path}
-              className={({ isActive }) => (isActive ? "active" : undefined)}
               end
             >
               {route.name}
@@ -81,7 +78,7 @@ const App: FC = () => {
             classNames="page"
             unmountOnExit
           >
-            {(state) => (
+            {() => (
               <div ref={nodeRef} className="page">
                 {currentOutlet}
               </div>
