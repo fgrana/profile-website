@@ -37,10 +37,10 @@ const Experience = () => {
         international internal competition “Innovation Lab” where he presented a
         project with artificial intelligence using Python and Tensor Flow
       </p>
-      <h1>Personality TRAITS</h1>
+      <h1>Personality traits</h1>
       Social and competitive, always willing to learn from the team and face new
       challenges
-      <h1>EDUCATION</h1>
+      <h1>Education</h1>
       <p>First English Certificate.</p>
       <p>Jovenes a programar(2021-2022)</p>
       <p>ITI - High school of technology(2019-2021)</p>
