@@ -2,7 +2,6 @@
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .img {
@@ -12,15 +11,20 @@
   margin-right: auto;
 }
 
+.imgText {
+  width: 25px;
+  height: 25px;
+}
+
 .imgstack {
   width: 35px;
   height: 35px;
-  flex: 1 1 1 1 200px
+  flex: 1 1 1 1 200px;
 }
 .iconContainer {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
 .imgIcon {
