@@ -19,10 +19,10 @@ const Home = () => {
           A Senior golang developer with experience in microserices. Throughout
           his career have worked on diverse projects, always emphasizing
           attention to detail and effective communication with colleagues across
-          the globe. My experience spans multiple programming languages,
-          including Python, Ruby, Elixir and React. Additionally, I have a solid
-          understanding of cloud computing, particularly within the AWS
-          ecosystem. All my work has been executed under agile methodologies,
+          the globe. His experience spans multiple programming languages,
+          including Python, Ruby, Elixir and React. Additionally, he have a
+          solid understanding of cloud computing, particularly within the AWS
+          ecosystem. All his work has been executed under agile methodologies,
           ensuring efficiency and collaboration.
         </p>
       </div>
